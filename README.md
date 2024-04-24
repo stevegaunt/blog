@@ -43,7 +43,7 @@ It uses H2 DB (in-memory, MySQL mode) as the database.
 and JUnit5 for writing test codes.
 
 #### Modules
-![image](https://github.com/shirohoo/realworld-java21-springboot3/assets/71188307/3e81ab10-8dfc-482d-8aca-6788e6ab4659)
+
 
 `core`, `persistence`, `api` and `bootstrap` modules exist, and each module performs the following roles.
 
@@ -64,8 +64,6 @@ and JUnit5 for writing test codes.
 
 
 - [schema.sql](database/schema.sql)
-
-![image](https://github.com/shirohoo/realworld-java21-springboot3/assets/71188307/2ed3b129-f9ec-4431-8959-374f317b7224)
 
 ---
 
