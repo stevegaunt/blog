@@ -82,7 +82,12 @@ and JUnit5 for writing test codes.
 
 > **Note:** When you run the `build` task, this task runs automatically. If the code style doesn't match, the build will fail.
 
-### example GraphQl request
+```shell
+./gradlew spotlessApply
+```
+
+
+### Example GraphQl request
 ```shell
 POST using graphql client
 
@@ -101,10 +106,7 @@ UserByName {
   }
 }
 ```
-> 
-```shell
-./gradlew spotlessApply
-```
+
 
 ### Run test
 
