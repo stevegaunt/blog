@@ -1,6 +1,9 @@
 logging:
   level:
-    com.zaxxer.hikari.HikariConfig: DEBUG
+    com.zaxxer.hikari.HikariConfig: debug
+    steve: debug
+    graphql: debug
+    web: debug
 
 security:
   key:
