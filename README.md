@@ -17,10 +17,10 @@
 * [Getting started](#getting-started)
    * [Run application](#run-application)
    * [Apply code style](#apply-code-style)
+   * [example GraphQl request](#apply-code-style)
    * [Run test](#run-test)
    * [Run build](#run-build)
-   * [Run E2E test](#run-e2e-test)
-     * [Performance](#performance)
+
 
 ---
 
@@ -50,10 +50,11 @@ and JUnit5 for writing test codes.
 - bootstrap: All existing modules are put together to form an executable application.
 - core: Contains the core logic of the application, including the domain model, service, and exception handling.
 - persistence: Contains the persistence layer logic of the application, including the repository and entity.
-- api: Contains the API layer logic of the application, including the controller and DTO.
+- api: Contains the API layer logic of the application, including the controller and DTO and Graphql.
+
 
 #### Classes
-- ~Controller: Processes HTTP requests, calls business logic, and generates responses.
+- ~Controller: Processes HTTP requests, Graphql Requests, calls business logic, and generates responses.
 - ~Service: Implements business logic and interacts with the database through Repositories.
 - ~Repository: An interface for interacting with the database, implemented using Spring Data JPA. 
 
@@ -81,6 +82,26 @@ and JUnit5 for writing test codes.
 
 > **Note:** When you run the `build` task, this task runs automatically. If the code style doesn't match, the build will fail.
 
+### example GraphQl request
+```shell
+POST using graphql client
+
+http://localhost:8080/graphql
+
+query
+UserByName {
+  userByName(username: "u1714138542") { 
+      username
+      email
+      username
+      bio
+      article {
+           title
+      }
+  }
+}
+```
+> 
 ```shell
 ./gradlew spotlessApply
 ```

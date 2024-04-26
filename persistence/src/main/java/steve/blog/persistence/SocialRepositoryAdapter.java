@@ -2,12 +2,12 @@ package steve.blog.persistence;
 
 import java.util.List;
 
-import steve.blog.core.model.SocialRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 
+import steve.blog.core.model.SocialRepository;
 import steve.blog.core.model.User;
 import steve.blog.core.model.UserFollow;
 

@@ -1,10 +1,6 @@
 package steve.blog.core.service;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 import org.springframework.stereotype.Service;
 
@@ -53,8 +49,20 @@ public class ArticleService {
     /**
      * Get articles by facets.
      *
+     * @param facets rticle facets
+     * @return Returns articles without information
+     */
+    public List<Article> getArticlesOnly(User requester, ArticleFacets facets) {
+
+        Collection<User> authors = Collections.singletonList(requester);
+        return articleRepository.findAll( facets);
+    }
+
+    /**
+     * Get articles by facets.
+     *
      * @param requester user who requested
-     * @param facets article facets
+     * @param facets    article facets
      * @return Returns articles with information
      */
     public List<ArticleDetails> getArticles(User requester, ArticleFacets facets) {
@@ -66,7 +74,7 @@ public class ArticleService {
     /**
      * Get articles by my followings.
      *
-     * @param user user who requested
+     * @param user   user who requested
      * @param facets article facets
      * @return Returns articles with information
      */
@@ -84,7 +92,7 @@ public class ArticleService {
      * Write a new article.
      *
      * @param article article
-     * @param tags tags
+     * @param tags    tags
      * @return Returns the written article
      */
     public Article write(Article article, Collection<Tag> tags) {
@@ -99,8 +107,8 @@ public class ArticleService {
      * Edit article title.
      *
      * @param requester user who requested
-     * @param article article
-     * @param title new title
+     * @param article   article
+     * @param title     new title
      * @return Returns the edited article
      */
     public Article editTitle(User requester, Article article, String title) {
@@ -119,8 +127,8 @@ public class ArticleService {
     /**
      * Edit article description.
      *
-     * @param requester user who requested
-     * @param article article
+     * @param requester   user who requested
+     * @param article     article
      * @param description new description
      * @return Returns the edited article
      */
@@ -137,8 +145,8 @@ public class ArticleService {
      * Edit article content.
      *
      * @param requester user who requested
-     * @param article article
-     * @param content new content
+     * @param article   article
+     * @param content   new content
      * @return Returns the edited article
      */
     public Article editContent(User requester, Article article, String content) {
@@ -154,7 +162,7 @@ public class ArticleService {
      * Delete article.
      *
      * @param requester user who requested
-     * @param article article
+     * @param article   article
      */
     public void delete(User requester, Article article) {
         if (article.isNotAuthor(requester)) {
@@ -168,7 +176,7 @@ public class ArticleService {
      * Check if the requester has favorited the article.
      *
      * @param requester user who requested
-     * @param article article
+     * @param article   article
      * @return Returns true if already favorited
      */
     public boolean isFavorite(User requester, Article article) {
@@ -179,7 +187,7 @@ public class ArticleService {
      * Favorite article.
      *
      * @param requester user who requested
-     * @param article article
+     * @param article   article
      */
     public void favorite(User requester, Article article) {
         if (this.isFavorite(requester, article)) {
@@ -193,7 +201,7 @@ public class ArticleService {
      * Unfavorite article.
      *
      * @param requester user who requested
-     * @param article article
+     * @param article   article
      */
     public void unfavorite(User requester, Article article) {
         if (!this.isFavorite(requester, article)) {
@@ -217,7 +225,7 @@ public class ArticleService {
      * Get article details for user.
      *
      * @param requester user who requested
-     * @param article article
+     * @param article   article
      * @return Returns article details
      */
     public ArticleDetails getArticleDetails(User requester, Article article) {

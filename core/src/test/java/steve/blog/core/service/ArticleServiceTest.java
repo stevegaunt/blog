@@ -15,10 +15,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
-import steve.blog.core.model.ArticleFavoriteRepository;
-import steve.blog.core.model.SocialRepository;
-import steve.blog.core.model.TestArticle;
-import steve.blog.core.model.TestUser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -30,8 +26,12 @@ import steve.blog.core.model.Article;
 import steve.blog.core.model.ArticleDetails;
 import steve.blog.core.model.ArticleFacets;
 import steve.blog.core.model.ArticleFavorite;
+import steve.blog.core.model.ArticleFavoriteRepository;
 import steve.blog.core.model.ArticleRepository;
+import steve.blog.core.model.SocialRepository;
 import steve.blog.core.model.Tag;
+import steve.blog.core.model.TestArticle;
+import steve.blog.core.model.TestUser;
 import steve.blog.core.model.User;
 import steve.blog.core.model.UserFollow;
 

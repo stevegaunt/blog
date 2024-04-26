@@ -9,7 +9,6 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.UUID;
 
-import steve.blog.core.model.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,6 +20,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import steve.blog.core.model.PasswordEncoder;
 import steve.blog.core.model.User;
 import steve.blog.core.model.UserRegistry;
+import steve.blog.core.model.UserRepository;
 
 @ExtendWith(MockitoExtension.class)
 class UserServiceTest {

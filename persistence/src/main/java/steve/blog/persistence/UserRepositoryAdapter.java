@@ -3,7 +3,6 @@ package steve.blog.persistence;
 import java.util.Optional;
 import java.util.UUID;
 
-import steve.blog.core.model.UserRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 
 import steve.blog.core.model.PasswordEncoder;
 import steve.blog.core.model.User;
+import steve.blog.core.model.UserRepository;
 
 @Repository
 @RequiredArgsConstructor

@@ -4,9 +4,6 @@ import static java.util.stream.Collectors.*;
 
 import java.util.UUID;
 
-import steve.blog.api.request.EditArticleRequest;
-import steve.blog.core.service.ArticleService;
-import steve.blog.core.service.UserService;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 
+import steve.blog.api.request.EditArticleRequest;
 import steve.blog.api.request.WriteArticleRequest;
 import steve.blog.api.response.ArticleResponse;
 import steve.blog.api.response.MultipleArticlesResponse;
@@ -27,6 +25,8 @@ import steve.blog.api.response.SingleArticleResponse;
 import steve.blog.core.model.Article;
 import steve.blog.core.model.ArticleDetails;
 import steve.blog.core.model.ArticleFacets;
+import steve.blog.core.service.ArticleService;
+import steve.blog.core.service.UserService;
 
 @RestController
 @RequiredArgsConstructor

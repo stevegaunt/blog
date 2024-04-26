@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-@DisplayName("RealWorld Application Test")
-public class RealWorldApplicationTest {
+@DisplayName("Blog Application Test")
+public class BlogApplicationTest {
     @Test
-    @DisplayName("spring context of RealWorld Application is loaded.")
+    @DisplayName("spring context of Blog Application is loaded.")
     void contextLoads() {}
 }

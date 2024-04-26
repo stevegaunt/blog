@@ -1,4 +1,4 @@
-rootProject.name = "blog"
+rootProject.name = "steve.blog"
 
 include("bootstrap", "core", "api", "persistence")
 

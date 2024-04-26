@@ -1,9 +1,9 @@
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
-group = "sample.shirohoo"
+group = "steve.blog"
 
 springBoot {
-    mainClass.set("sample.shirohoo.realworld.RealWorldApplication")
+    mainClass.set("steve.blog.BlogApplication")
 }
 
 plugins {
@@ -64,7 +64,7 @@ allprojects {
             formatAnnotations()
             removeUnusedImports()
             trimTrailingWhitespace()
-            importOrder("java", "jakarta", "org", "com", "net", "io", "lombok", "sample.shirohoo")
+            importOrder("java", "jakarta", "org", "com", "net", "io", "lombok", "steve.blog")
         }
 
         kotlin {

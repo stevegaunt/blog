@@ -5,7 +5,6 @@ import java.util.UUID;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-import steve.blog.core.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+
 import lombok.RequiredArgsConstructor;
 
 import steve.blog.api.request.LoginUserRequest;
@@ -25,6 +28,7 @@ import steve.blog.api.request.UpdateUserRequest;
 import steve.blog.api.response.UsersResponse;
 import steve.blog.core.model.User;
 import steve.blog.core.model.UserRegistry;
+import steve.blog.core.service.UserService;
 
 @RestController
 @RequiredArgsConstructor
@@ -32,7 +36,7 @@ class UserController {
     private static final String LOGIN_URL = "/api/users/login";
 
     private final UserService userService;
-    private final RealWorldBearerTokenProvider bearerTokenProvider;
+    private final DummyBearerTokenProvider bearerTokenProvider;
 
     @PostMapping("/api/users")
     public ModelAndView doPost(HttpServletRequest httpServletRequest, @RequestBody SignupRequest request) {
@@ -53,6 +57,13 @@ class UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(LOGIN_URL)
+    @Operation(summary = "to login user", description = "name and password needed")
+    @ApiResponses(
+            value = {
+                @ApiResponse(responseCode = "200", description = "Successful"),
+                @ApiResponse(responseCode = "500", description = "Internal server error"),
+                @ApiResponse(responseCode = "1001", description = "Application specific error.")
+            })
     public UsersResponse doPost(@RequestBody LoginUserRequest request) {
         var email = request.user().email();
         var password = request.user().password();

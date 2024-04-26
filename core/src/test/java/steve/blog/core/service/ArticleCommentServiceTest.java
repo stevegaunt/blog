@@ -11,9 +11,6 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.UUID;
 
-import steve.blog.core.model.ArticleCommentRepository;
-import steve.blog.core.model.TestArticle;
-import steve.blog.core.model.TestUser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -23,6 +20,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import steve.blog.core.model.Article;
 import steve.blog.core.model.ArticleComment;
+import steve.blog.core.model.ArticleCommentRepository;
+import steve.blog.core.model.TestArticle;
+import steve.blog.core.model.TestUser;
 import steve.blog.core.model.User;
 
 @ExtendWith(MockitoExtension.class)

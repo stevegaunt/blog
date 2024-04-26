@@ -1,6 +1,5 @@
 package steve.blog.persistence;
 
-import steve.blog.core.model.ArticleFavoriteRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -8,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 
 import steve.blog.core.model.Article;
 import steve.blog.core.model.ArticleFavorite;
+import steve.blog.core.model.ArticleFavoriteRepository;
 import steve.blog.core.model.User;
 
 @Repository

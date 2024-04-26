@@ -2,8 +2,6 @@ package steve.blog.api;
 
 import java.util.UUID;
 
-import steve.blog.core.service.ArticleService;
-import steve.blog.core.service.UserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 
 import steve.blog.api.response.SingleArticleResponse;
+import steve.blog.core.service.ArticleService;
+import steve.blog.core.service.UserService;
 
 @RestController
 @RequiredArgsConstructor

@@ -3,7 +3,6 @@ package steve.blog.core.service;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
-import steve.blog.core.model.UserRepository;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -11,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import steve.blog.core.model.PasswordEncoder;
 import steve.blog.core.model.User;
 import steve.blog.core.model.UserRegistry;
+import steve.blog.core.model.UserRepository;
 
 @Service
 @RequiredArgsConstructor

@@ -32,26 +32,44 @@ import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
 @Configuration
 @EnableMethodSecurity
 class SecurityConfiguration {
+
+    private static final String[] AUTH_WHITELIST = {
+        "/swagger-resources",
+        "/swagger-resources/**",
+        "/configuration/ui",
+        "/configuration/security",
+        "/swagger-ui.html",
+        "/webjars/**",
+        "/v3/api-docs/**",
+        "/api/public/**",
+        "/api/public/authenticate",
+        "/actuator/*",
+        "/swagger-ui/**",
+        "/api-docs/**",
+        "/graphiql/**",
+            "/graphql/**"
+    };
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.httpBasic(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
                 .formLogin(AbstractHttpConfigurer::disable)
-
-                .authorizeHttpRequests(
-                        requests -> requests.requestMatchers(HttpMethod.POST, "/api/users", "/api/users/login")
-                                .permitAll()
-                                .requestMatchers(
-                                        HttpMethod.GET,
-                                        "/api/articles/{slug}/comments",
-                                        "/api/articles/{slug}",
-                                        "/api/articles",
-                                        "/api/profiles/{username}",
-                                        "/api/tags")
-                                .permitAll()
-                                .anyRequest()
-                                .authenticated())
+                .authorizeHttpRequests(requests -> requests.requestMatchers(AUTH_WHITELIST)
+                        .permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/users", "/api/users/login")
+                        .permitAll()
+                        .requestMatchers(
+                                HttpMethod.GET,
+                                "/api/articles/{slug}/comments",
+                                "/api/articles/{slug}",
+                                "/api/articles",
+                                "/api/profiles/{username}",
+                                "/api/tags")
+                        .permitAll()
+                        .anyRequest()
+                        .authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
                 .sessionManagement(sessionManager -> sessionManager.sessionCreationPolicy(STATELESS))
                 .exceptionHandling(exceptionHandler -> exceptionHandler

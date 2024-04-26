@@ -10,12 +10,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 
-class RealWorldBearerTokenResolverTest {
-    RealWorldBearerTokenResolver sut;
+class DummyBearerTokenResolverTest {
+    DummyBearerTokenResolver sut;
 
     @BeforeEach
     void setUp() {
-        sut = new RealWorldBearerTokenResolver();
+        sut = new DummyBearerTokenResolver();
     }
 
     @Test

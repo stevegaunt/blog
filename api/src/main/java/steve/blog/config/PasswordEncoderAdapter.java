@@ -1,8 +1,9 @@
 package steve.blog.config;
 
-import steve.blog.core.model.PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
+
+import steve.blog.core.model.PasswordEncoder;
 
 @Component
 class PasswordEncoderAdapter implements PasswordEncoder {

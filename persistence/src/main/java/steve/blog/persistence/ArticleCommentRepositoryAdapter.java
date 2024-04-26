@@ -3,7 +3,6 @@ package steve.blog.persistence;
 import java.util.List;
 import java.util.Optional;
 
-import steve.blog.core.model.ArticleCommentRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 
 import steve.blog.core.model.Article;
 import steve.blog.core.model.ArticleComment;
+import steve.blog.core.model.ArticleCommentRepository;
 
 @Repository
 @RequiredArgsConstructor

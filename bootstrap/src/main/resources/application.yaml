@@ -10,13 +10,36 @@ security:
 spring:
   datasource:
     url: jdbc:h2:mem:testdb?MODE=MYSQL;
+  graphql:
+    graphiql:
+      enabled: true
+    schema:
+      printer:
+        enabled: true
+
+
 
   jpa:
     open-in-view: false
     hibernate:
       ddl-auto: create-drop
-
 decorator:
   datasource:
     p6spy:
       enable-logging: true
+
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+
+debug: true
+
+graphql:
+  tools:
+
+    schema-location-pattern: "**/*.graphql"
+

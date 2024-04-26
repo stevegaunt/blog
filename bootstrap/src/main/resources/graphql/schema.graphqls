@@ -1,0 +1,18 @@
+type Query {
+    userByName(username: String): User
+}
+
+type User {
+    id: ID
+    email: String
+    username: String
+    bio: String
+    article: [Article]
+}
+
+type Article {
+    id: ID
+    title: String
+    description: String
+    content: String
+}

@@ -2,8 +2,6 @@ package steve.blog.api;
 
 import java.util.UUID;
 
-import steve.blog.core.service.SocialService;
-import steve.blog.core.service.UserService;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 
 import steve.blog.api.response.ProfilesResponse;
+import steve.blog.core.service.SocialService;
+import steve.blog.core.service.UserService;
 
 @RestController
 @RequiredArgsConstructor

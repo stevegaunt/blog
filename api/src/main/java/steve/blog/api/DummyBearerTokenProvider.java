@@ -14,7 +14,7 @@ import steve.blog.core.model.User;
 
 @Component
 @RequiredArgsConstructor
-class RealWorldBearerTokenProvider {
+class DummyBearerTokenProvider {
     private final JwtEncoder jwtEncoder;
 
     Jwt getToken(User user) {
@@ -24,7 +24,7 @@ class RealWorldBearerTokenProvider {
 
         var now = Instant.now();
         return jwtEncoder.encode(JwtEncoderParameters.from(JwtClaimsSet.builder()
-                .issuer("https://realworld.io")
+                .issuer("https://stevetest.co.uk")
                 .issuedAt(now)
                 .expiresAt(now.plusSeconds(300))
                 .subject(user.getId().toString())
