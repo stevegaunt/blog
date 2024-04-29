@@ -15,4 +15,8 @@ dependencies {
 
     // open api ui
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0")
+
+    testImplementation(testFixtures(project(":core")))
+
+
 }
